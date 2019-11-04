@@ -24,26 +24,26 @@ int main()
     int nJeu=0;
     int nJoueur;
 
-    //On appelle la procédure pour initialiser tous les cases du tableau
+    //On appelle la procÃ©dure pour initialiser tous les cases du tableau
     initTableau(cTabCar);
 
-    while (nJeu!=1) //Tant que nJeu est différent de 1 alors le jeu continue
+    while (nJeu!=1) //Tant que nJeu est diffÃ©rent de 1 alors le jeu continue
     {
            switch (nTour) //Cas parmi pour les tours
            {
                case 1 : //Lorsque nTour vaut 1 alors c'est le joueur 1 qui joue
                    nJoueur = 1;
-                   verifCase (cTabCar,nJoueur); //On appelle la procédure qui vérifie si la case du joueur est libre
+                   verifCase (cTabCar,nJoueur); //On appelle la procÃ©dure qui vÃ©rifie si la case du joueur est libre
                    nTour+=1;
                break;
                case 2 : //Lorsque nTour vaut 2 alors c'est le joueur 2 qui joue
                    nJoueur = 2;
-                   verifCase (cTabCar,nJoueur); //On appelle la procédure qui vérifie si la case du joueur est libre
+                   verifCase (cTabCar,nJoueur); //On appelle la procÃ©dure qui vÃ©rifie si la case du joueur est libre
                    nTour=1;
                break;
            }
             afficheTableau(cTabCar); //On affiche le tableau
-            nJeu=victoire(cTabCar); //On affecte à nJeu le résultat de la fonction victoire qui permettra de dire si l'une des conditions de victoire a été remplies
+            nJeu=victoire(cTabCar); //On affecte Ã  nJeu le rÃ©sultat de la fonction victoire qui permettra de dire si l'une des conditions de victoire a Ã©tÃ© remplies
     }
 
     printf("\n\n\n");
@@ -72,7 +72,7 @@ void initTableau(char cTabCar[TAILLE][TAILLE])
     }
 }
 
-//----Verfication si la case est prise + appel de la procédure pour placer les CO----
+//----Verfication si la case est prise + appel de la procÃ©dure pour placer les CO----
 void verifCase (char cTabCar[TAILLE][TAILLE],int nJoueur)
 {
     int ni,nj;
@@ -84,13 +84,13 @@ void verifCase (char cTabCar[TAILLE][TAILLE],int nJoueur)
         ni-=1;
         nj-=1;
     }while (cTabCar[ni][nj]!='~');
-    placerTableau(cTabCar,ni,nj,nJoueur); //On appelle la procédure qui pert de placer le caractère du joueur en fonction des coordonnées qu'il a donné
+    placerTableau(cTabCar,ni,nj,nJoueur); //On appelle la procÃ©dure qui pert de placer le caractÃ¨re du joueur en fonction des coordonnÃ©es qu'il a donnÃ©
 
 }
 
 
 
-//----Placer le caractère du joueur en fonction des Coordonnées dans le tableau----
+//----Placer le caractÃ¨re du joueur en fonction des CoordonnÃ©es dans le tableau----
 void placerTableau(char cTabCar[TAILLE][TAILLE],int nx,int ny,int nJoueur)
 {
     int ni=nx;
@@ -114,14 +114,14 @@ int victoire (char cTabCar[TAILLE][TAILLE])
         {
             if (cTabCar[ni][nj]!='~')
             {
-                //Il faut que 3 même caractères se suivent
-                //Vérification horizontale
+                //Il faut que 3 mÃªme caractÃ¨res se suivent
+                //VÃ©rification horizontale
                 if ((cTabCar[ni][nj-1]==cTabCar[ni][nj])&&(cTabCar[ni][nj+1]==cTabCar[ni][nj])) nVictoire=1;
-                //Vérification verticale
+                //VÃ©rification verticale
                 if ((cTabCar[ni-1][nj]==cTabCar[ni][nj])&&(cTabCar[ni+1][nj]==cTabCar[ni][nj])) nVictoire=1;
-                //Vérification diagonale haut gauche à bas droite
+                //VÃ©rification diagonale haut gauche Ã  bas droite
                 if ((cTabCar[ni-1][nj-1]==cTabCar[ni][nj])&&(cTabCar[ni+1][nj+1]==cTabCar[ni][nj])) nVictoire=1;
-                //Vérification diagonale bas gauche à haut droite
+                //VÃ©rification diagonale bas gauche Ã  haut droite
                 if ((cTabCar[ni+1][nj+1]==cTabCar[ni][nj])&&(cTabCar[ni-1][nj-1]==cTabCar[ni][nj])) nVictoire=1;
             }
         }
@@ -145,6 +145,7 @@ void afficheTableau (char cTabCar[TAILLE][TAILLE])
         printf("\n");
     }
 }
+
 
 
 
